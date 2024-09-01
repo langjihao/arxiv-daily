@@ -137,15 +137,15 @@ def get_daily_papers(topic,query="slam", max_results=2):
             #        repo_url = get_code_link(paper_key)
             if repo_url is not None:
                 content[paper_key] = "|**{}**|**{}**|{}|{} et.al.|[PDF]({})|**[link]({})**|\n".format(
-                       update_time,paper_title,paper_abstract,paper_first_author,paper_key,paper_url,repo_url)
-                content_to_web[paper_key] = "- {}, **{}**,{}, {} et.al., Paper: [{}]({}), Code: **[{}]({})**".format(
-                       update_time,paper_title,paper_abstract,paper_first_author,paper_url,paper_url,repo_url,repo_url)
+                       update_time,paper_title,paper_abstract,paper_first_author,paper_url,repo_url)
+                content_to_web[paper_key] = "- {}, **{}**,{}, {} et.al., Paper: [PDF]({}), Code: **[Code]({})**".format(
+                       update_time,paper_title,paper_abstract,paper_first_author,paper_url,repo_url)
 
             else:
                 content[paper_key] = "|**{}**|**{}**|{}|{} et.al.|[PDF]({})|null|\n".format(
-                       update_time,paper_title,paper_abstract,paper_first_author,paper_key,paper_url)
-                content_to_web[paper_key] = "- {}, **{}**,{}, {} et.al., Paper: [{}]({})".format(
-                       update_time,paper_title,paper_abstract,paper_first_author,paper_url,paper_url)
+                       update_time,paper_title,paper_abstract,paper_first_author,paper_url)
+                content_to_web[paper_key] = "- {}, **{}**,{}, {} et.al., Paper: [PDF]({})".format(
+                       update_time,paper_title,paper_abstract,paper_first_author,paper_url)
 
             # TODO: select useful comments
             comments = None

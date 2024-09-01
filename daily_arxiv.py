@@ -100,6 +100,7 @@ def get_daily_papers(topic,query="slam", max_results=2):
     )
 
     for result in search_engine.results():
+        print(result)
 
         paper_id            = result.get_short_id()
         paper_title         = result.title
@@ -135,16 +136,16 @@ def get_daily_papers(topic,query="slam", max_results=2):
             #    if repo_url is None:
             #        repo_url = get_code_link(paper_key)
             if repo_url is not None:
-                content[paper_key] = "|**{}**|**{}**|{} et.al.|[{}]({})|**[link]({})**|\n".format(
-                       update_time,paper_title,paper_first_author,paper_key,paper_url,repo_url)
-                content_to_web[paper_key] = "- {}, **{}**, {} et.al., Paper: [{}]({}), Code: **[{}]({})**".format(
-                       update_time,paper_title,paper_first_author,paper_url,paper_url,repo_url,repo_url)
+                content[paper_key] = "|**{}**|**{}**|{}|{} et.al.|[PDF]({})|**[link]({})**|\n".format(
+                       update_time,paper_title,paper_abstract,paper_first_author,paper_key,paper_url,repo_url)
+                content_to_web[paper_key] = "- {}, **{}**,{}, {} et.al., Paper: [{}]({}), Code: **[{}]({})**".format(
+                       update_time,paper_title,paper_abstract,paper_first_author,paper_url,paper_url,repo_url,repo_url)
 
             else:
-                content[paper_key] = "|**{}**|**{}**|{} et.al.|[{}]({})|null|\n".format(
-                       update_time,paper_title,paper_first_author,paper_key,paper_url)
-                content_to_web[paper_key] = "- {}, **{}**, {} et.al., Paper: [{}]({})".format(
-                       update_time,paper_title,paper_first_author,paper_url,paper_url)
+                content[paper_key] = "|**{}**|**{}**|{}|{} et.al.|[PDF]({})|null|\n".format(
+                       update_time,paper_title,paper_abstract,paper_first_author,paper_key,paper_url)
+                content_to_web[paper_key] = "- {}, **{}**,{}, {} et.al., Paper: [{}]({})".format(
+                       update_time,paper_title,paper_abstract,paper_first_author,paper_url,paper_url)
 
             # TODO: select useful comments
             comments = None
@@ -326,10 +327,10 @@ def json_to_md(filename,md_filename,
 
             if use_title == True :
                 if to_web == False:
-                    f.write("|Publish Date|Title|Authors|PDF|Code|\n" + "|---|---|---|---|---|\n")
+                    f.write("|Publish Date|Title|Abstract|Authors|PDF|Code|\n" + "|---|---|---|---|---|---|\n")
                 else:
-                    f.write("| Publish Date | Title | Authors | PDF | Code |\n")
-                    f.write("|:---------|:-----------------------|:---------|:------|:------|\n")
+                    f.write("| Publish Date | Title | Abstract | Authors | PDF | Code |\n")
+                    f.write("|:---------|:-----------------------|:-------------------------|:---------|:------|:------|\n")
 
             # sort papers by date
             day_content = sort_papers(day_content)

@@ -1,4 +1,5 @@
-## Updated on 2024.08.31
+## Updated on 2024.09.01
+> Usage instructions: [here](./docs/README.md#usage)
 
 <details>
   <summary>Table of Contents</summary>
@@ -24,7 +25,7 @@
 |**2024-08-16**|**Improving VTE Identification through Language Models from Radiology Reports: A Comparative Study of Mamba, Phi-3 Mini, and BERT**|Jamie Deng et.al.|[2408.09043](http://arxiv.org/abs/2408.09043)|null|
 |**2024-08-16**|**ECG-Chat: A Large ECG-Language Model for Cardiac Disease Diagnosis**|Yubao Zhao et.al.|[2408.08849](http://arxiv.org/abs/2408.08849)|null|
 
-<p align=right>(<a href=#updated-on-20240831>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20240901>back to top</a>)</p>
 
 ## LLM
 
@@ -41,5 +42,5 @@
 |**2024-08-29**|**Iterative Graph Alignment**|Fangyuan Yu et.al.|[2408.16667](http://arxiv.org/abs/2408.16667)|null|
 |**2024-08-29**|**LLMs generate structurally realistic social networks but overestimate political homophily**|Serina Chang et.al.|[2408.16629](http://arxiv.org/abs/2408.16629)|**[link](https://github.com/snap-stanford/llm-social-network)**|
 
-<p align=right>(<a href=#updated-on-20240831>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20240901>back to top</a>)</p>
 
